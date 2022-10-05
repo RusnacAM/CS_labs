@@ -1,6 +1,4 @@
-package implementations;
-
-import java.util.Locale;
+package Lab1;
 
 public class Vignere implements Cipher{
     private static String key;
@@ -15,10 +13,11 @@ public class Vignere implements Cipher{
         message = message.toUpperCase();
         message = message.replace(" ", "");
 
+        //respective formula for encryption is applied
         for(int i = 0, j = 0; i < message.length(); i++){
             char curr = message.charAt(i);
             int letter = (curr + key.charAt(j)) % 26;
-
+            // convert to ASCII
             letter += 'A';
             encryptedMess += (char)(letter);
             j = ++j % key.length();
@@ -33,6 +32,7 @@ public class Vignere implements Cipher{
         message = message.toUpperCase();
         message = message.replace(" ", "");
 
+        //respective formula for decryption is applied
         for(int i = 0, j = 0; i < message.length(); i++){
             char curr = message.charAt(i);
             int letter = (curr - key.charAt(j) + 26) % 26;

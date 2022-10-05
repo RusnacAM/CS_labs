@@ -1,6 +1,4 @@
-package implementations;
-
-import java.util.Locale;
+package Lab1;
 
 public class Caesar implements Cipher{
     private static int key;
@@ -15,6 +13,8 @@ public class Caesar implements Cipher{
         message = message.toLowerCase();
         String encryptedMess = "";
 
+        // for the message to be encrypted, simplu the given formula has been applied
+        // in order to find the new letter
         for(int i = 0; i < message.length(); i++){
             int pos = ALPHABET.indexOf(message.charAt(i));
             pos = (key + pos) % 26;
@@ -30,6 +30,7 @@ public class Caesar implements Cipher{
         message = message.toLowerCase();
         String decryptedMess = "";
 
+        // same process but the formula for decryption is applied
         for(int i = 0; i < message.length(); i++){
             int pos = ALPHABET.indexOf(message.charAt(i));
             pos = (pos - key) % 26;

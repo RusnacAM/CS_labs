@@ -1,4 +1,4 @@
-package implementations;
+package Lab1;
 
 public class CaesarWithPermutation implements Cipher {
     private static int key;
@@ -10,10 +10,13 @@ public class CaesarWithPermutation implements Cipher {
         this.strKey = strKey;
     }
 
+    //function to obtain the new alphabet with permutation
     private String getAlphabet(){
         String tempAlphabet = "";
+        // the key and the alphabet are concat in one string
         tempAlphabet = strKey + ALPHABET;
         StringBuilder newAlphabet = new StringBuilder();
+        // removing duplicates from the alphabet
         tempAlphabet.chars().distinct().forEach(c -> newAlphabet.append((char) c));
         String alphabet = newAlphabet.toString();
 
@@ -26,6 +29,7 @@ public class CaesarWithPermutation implements Cipher {
         message = message.toLowerCase();
         String encryptedMess = "";
 
+        //same process as Caesar
         for(int i = 0; i < message.length(); i++){
             int pos = alphabet.indexOf(message.charAt(i));
             pos = (key + pos) % 26;
@@ -42,6 +46,7 @@ public class CaesarWithPermutation implements Cipher {
         message = message.toLowerCase();
         String decryptedMess = "";
 
+        //same process as Caesar
         for(int i = 0; i < message.length(); i++){
             int pos = alphabet.indexOf(message.charAt(i));
             pos = (pos - key) % 26;

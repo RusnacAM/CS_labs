@@ -1,4 +1,4 @@
-package implementations;
+package Lab1;
 
 public class Playfair implements Cipher {
     private static String key;
@@ -8,16 +8,21 @@ public class Playfair implements Cipher {
         this.key = key;
     }
 
+    // same function as Caesar with permutation to obtain new alphabet
     private String getAlphabet(){
         String tempAlphabet = ALPHABET.replace("j", "");
+        // concat the two strings
         tempAlphabet = key + tempAlphabet;
         StringBuilder newAlphabet = new StringBuilder();
+        // remove duplicates
         tempAlphabet.chars().distinct().forEach(c -> newAlphabet.append((char) c));
         String alphabet = newAlphabet.toString();
 
         return alphabet;
     }
 
+    // function to either separate the same letters in the message
+    // or to add a letter at the end if the message has odd amount of letters
     private String checkMessage(String message){
         message = message.replace(" ", "");
         for(int i = 0; i < message.length()-1; i++){
@@ -26,7 +31,6 @@ public class Playfair implements Cipher {
                 message = message.substring(0, j) + 'x' + message.substring(j);
             }
         }
-
         if(message.length() % 2 != 0){
             message += 'z';
         }
@@ -34,6 +38,7 @@ public class Playfair implements Cipher {
         return message;
     }
 
+    // make the 5x5 table by simply pasting the alphabet in using a counter
     private char[][] makeTable(String alphabet){
         char[][] table = new char[5][5];
 
@@ -59,6 +64,7 @@ public class Playfair implements Cipher {
 
         String encryptedMess = "";
 
+        // implementation of the actual encryption, the three diff rules described in the report
         for(int i = 0; i < message.length(); i += 2){
             char first = message.charAt(i);
             char second = message.charAt(i+1);
@@ -79,6 +85,7 @@ public class Playfair implements Cipher {
                 }
             }
 
+            //finding the positions according to the rules
             if(firstRow == secondRow){
                 encryptedMess += table[firstRow][(firstCol + 1) % 5];
                 encryptedMess += table[secondRow][(secondCol + 1) % 5];
@@ -96,12 +103,15 @@ public class Playfair implements Cipher {
 
     @Override
     public String decrypt(String message) {
+        // same exact process and functions as for encryption
         String alphabet = getAlphabet();
         message = checkMessage(message);
         char[][] table = makeTable(alphabet);
 
         String decryptedMess = "";
 
+        // for loop for decryption just like encryption
+        // with the only change being in the 3 rules for decryption
         for(int i = 0; i < message.length(); i += 2){
             char first = message.charAt(i);
             char second = message.charAt(i+1);
@@ -122,6 +132,7 @@ public class Playfair implements Cipher {
                 }
             }
 
+            //finding the positions according to the rules
             if(firstRow == secondRow){
                 if(firstCol == 0){
                     firstCol = 5;
