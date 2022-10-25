@@ -1,4 +1,5 @@
-package Lab1;
+package main.Implementations.ClassicalCiphers;
+import main.Cipher;
 
 public class CaesarWithPermutation implements Cipher {
     private static int key;
@@ -6,8 +7,8 @@ public class CaesarWithPermutation implements Cipher {
     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
     public CaesarWithPermutation(int key, String strKey) {
-        this.key = key;
-        this.strKey = strKey;
+        CaesarWithPermutation.key = key;
+        CaesarWithPermutation.strKey = strKey;
     }
 
     //function to obtain the new alphabet with permutation

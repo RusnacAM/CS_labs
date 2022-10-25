@@ -1,11 +1,12 @@
-package Lab1;
+package main.Implementations.ClassicalCiphers;
+import main.Cipher;
 
-public class Caesar implements Cipher{
+public class Caesar implements Cipher {
     private static int key;
     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
     public Caesar(int key) {
-        this.key = key;
+        Caesar.key = key;
     }
 
     @Override

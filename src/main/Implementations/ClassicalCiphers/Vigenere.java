@@ -1,10 +1,11 @@
-package Lab1;
+package main.Implementations.ClassicalCiphers;
+import main.Cipher;
 
-public class Vignere implements Cipher{
+public class Vigenere implements Cipher {
     private static String key;
 
-    public Vignere(String key) {
-        this.key = key;
+    public Vigenere(String key) {
+        Vigenere.key = key;
     }
 
     @Override

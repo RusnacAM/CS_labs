@@ -1,4 +1,4 @@
-package Lab1;
+package main;
 
 public interface Cipher {
     String encrypt(String message);

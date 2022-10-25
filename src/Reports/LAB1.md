@@ -15,7 +15,7 @@ and classical ciphers
 3. Structure the project in the methods/classes/packages
 
 
-### Caesar Cipher
+### Caesar
 
 &nbsp; &nbsp;For Caesar's cipher, each letter of the given text is replaced by a letter of some fixed number
 of positions down the alphabet.\
@@ -31,9 +31,9 @@ by the formulas:
 *em = enc<sub>k</sub>(x) = (x + k) mod 26*,\
 *dm = dec<sub>k</sub>(x) = (x - n) mod 26*
 
-### Caesar Cipher with Permutation
+### Caesar with Permutation
 
-&nbsp; &nbsp;For Caesar Cipher with permutation, it is very similar
+&nbsp; &nbsp;For Caesar main.Cipher with permutation, it is very similar
 to Caesar, almost the same, except there are 2 keys,
 one is the shift of the alphabet, and the other is 
 a string, the word based on which the permuation of 
@@ -48,7 +48,7 @@ appear twice in the new alphabet.\
 goes exactly the same as for the usual Caesar cipher, just
 with a new alphabet.
 
-### Vignere Cipher
+### Vignere 
 
 &nbsp; &nbsp;The Vignere cipher is a simple form of a polyalphabetic substitution.
 A polyalphabetic cipher is any cipher based on substitution, using multiple substitution alphabets.
@@ -75,7 +75,7 @@ These could also be represented by the following formulas:
 *E<sub>i</sub> = (P<sub>i</sub> + k<sub>i</sub>) mod 26*\
 *D<sub>i</sub> = (E<sub>i</sub> - k<sub>i</sub> + 26) mod 26*
 
-### Playfair Cipher
+### Playfair
 
 &nbsp; &nbsp;The Playfair cipher is a substitution cipher, and a popular
 symmetric encryption technique.\

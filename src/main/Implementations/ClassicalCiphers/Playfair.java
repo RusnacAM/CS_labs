@@ -1,11 +1,12 @@
-package Lab1;
+package main.Implementations.ClassicalCiphers;
+import main.Cipher;
 
 public class Playfair implements Cipher {
     private static String key;
     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
     public Playfair(String key) {
-        this.key = key;
+        Playfair.key = key;
     }
 
     // same function as Caesar with permutation to obtain new alphabet
