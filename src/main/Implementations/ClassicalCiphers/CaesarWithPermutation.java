@@ -1,5 +1,5 @@
 package main.Implementations.ClassicalCiphers;
-import main.Cipher;
+import main.Implementations.Cipher;
 
 public class CaesarWithPermutation implements Cipher {
     private static int key;
@@ -26,15 +26,15 @@ public class CaesarWithPermutation implements Cipher {
 
     @Override
     public String encrypt(String message) {
-        String alphabet = getAlphabet();
+        String newAlphabet = getAlphabet();
         message = message.toLowerCase();
         String encryptedMess = "";
 
         //same process as Caesar
         for(int i = 0; i < message.length(); i++){
-            int pos = alphabet.indexOf(message.charAt(i));
+            int pos = newAlphabet.indexOf(message.charAt(i));
             pos = (key + pos) % 26;
-            char c = alphabet.charAt(pos);
+            char c = newAlphabet.charAt(pos);
 
             encryptedMess += c;
         }

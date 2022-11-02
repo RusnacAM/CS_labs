@@ -1,5 +1,5 @@
 package main.Implementations.ClassicalCiphers;
-import main.Cipher;
+import main.Implementations.Cipher;
 
 public class Caesar implements Cipher {
     private static int key;

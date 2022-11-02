@@ -8,7 +8,7 @@ public class RC4 {
     }
 
     // conversion functions from string to bytes, and bytes to string
-    private int[] convert(String s) {
+    private static int[] convert(String s) {
         byte[] bytes = s.getBytes();
         int[] values = new int[bytes.length];
 
@@ -18,7 +18,7 @@ public class RC4 {
         return values;
     }
 
-    private String toString(int[] values) {
+    private static String toString(int[] values) {
         byte[] bytes = new byte[values.length];
 
         for(int i = 0; i < bytes.length; i++) {
@@ -28,7 +28,7 @@ public class RC4 {
     }
 
     // first step: key scheduling
-    private int[] keyScheduling(int[] key) {
+    private static int[] keyScheduling(int[] key) {
         // Initialize array
         int stateArr[] = new int[256];
         for(int i=0; i<256; i++) {
@@ -45,7 +45,7 @@ public class RC4 {
     }
 
     // second step key stream generation
-    private int[] keyStreamGen (int[] text, int[] ksa) {
+    private static int[] keyStreamGen(int[] text, int[] ksa) {
         int i = 0;
         int j = 0;
         int[] result = new int[text.length];
@@ -61,14 +61,14 @@ public class RC4 {
         return result;
     }
 
-    private void swap(int i, int j, int[] arr) {
+    private static void swap(int i, int j, int[] arr) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
     // XOR operation
-    private int[] performXOR(int[] message, int[] prga) {
+    private static int[] performXOR(int[] message, int[] prga) {
         int[] result = new int[message.length];
         for(int i = 0; i < result.length; i++) {
             result[i] = message[i] ^ prga[i];
@@ -77,7 +77,7 @@ public class RC4 {
     }
 
     // final step, either encryption or decryption
-    private int[] performAlg(int[] message) {
+    private static int[] performAlg(int[] message) {
         int[] newKey = convert(key);
         int[] ksa = keyScheduling(newKey);
         int[] keyGen = keyStreamGen(message, ksa);
@@ -93,7 +93,7 @@ public class RC4 {
         return encryptedMess;
     }
 
-    public String decrypt(int[] message) {
+    public static String decrypt(int[] message) {
         int[] result = performAlg(message);
         String decryptedMess = toString(result);
 

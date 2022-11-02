@@ -1,5 +1,5 @@
 package main.Implementations.SymmetricCiphers;
-import main.Cipher;
+import main.Implementations.Cipher;
 
 public class Blowfish implements Cipher {
     private static String key;
@@ -21,7 +21,7 @@ public class Blowfish implements Cipher {
         for (int i = 0; i < constant.P.length; i++) {
             constant.P[i] = xor(constant.P[i], key.substring(j, j + 8));
             j = (j + 8) % key.length();
-            //System.out.println("Subkey" + i +": " + constant.P[i]);
+            System.out.println("Subkey" + i +": " + constant.P[i]);
         }
     }
 
@@ -58,9 +58,7 @@ public class Blowfish implements Cipher {
         b = hexToBin(b);
         String ans = "";
         for (int i = 0; i < a.length(); i++)
-            ans += (char)(((a.charAt(i) - '0')
-                    ^ (b.charAt(i) - '0'))
-                    + '0');
+            ans += (char)(((a.charAt(i) - '0') ^ (b.charAt(i) - '0')) + '0');
         ans = binToHex(ans);
         return ans;
     }

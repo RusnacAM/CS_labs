@@ -33,7 +33,7 @@ by the formulas:
 
 ### Caesar with Permutation
 
-&nbsp; &nbsp;For Caesar main.Cipher with permutation, it is very similar
+&nbsp; &nbsp;For Caesar main.Implementations.Cipher with permutation, it is very similar
 to Caesar, almost the same, except there are 2 keys,
 one is the shift of the alphabet, and the other is 
 a string, the word based on which the permuation of 

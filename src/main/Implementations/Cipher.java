@@ -1,4 +1,4 @@
-package main;
+package main.Implementations;
 
 public interface Cipher {
     String encrypt(String message);
