@@ -9,7 +9,7 @@
 2. Implement an example of an asymmetric cipher - RSA.
 
 ### Asymmetric Ciphers. RSA (Rivest-Shamir-Adleman) cipher.
-<div style="text-align: justify">&nbsp; &nbsp;&nbsp;&nbsp;RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem 
+<div style="text-align: justify">&nbsp;&nbsp;&nbsp;&nbsp;RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem 
 that is widely used for secure data transmission. It is also 
 one of the oldest. The acronym "RSA" comes from the surnames of 
 Ron Rivest, Adi Shamir and Leonard Adleman.</div>
