@@ -79,7 +79,8 @@ they input their name and password. Upon a successful login, they receive a resp
 that they have been logged in. For the purposes of this laboratory, Postman
 was used to send requests:</div>
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_NQo5av/Screen Shot 2022-12-15 at 16.28.02.png)
+![](https://cdn.discordapp.com/attachments/758662311287980075/1052971135320473662/Screen_Shot_2022-12-15_at_17.31.17.png)
+
 ![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_mRnNnJ/Screen Shot 2022-12-15 at 16.36.50.png)
 
 <div style="text-align: justify">&nbsp;&nbsp;&nbsp;&nbsp;Note that this successful login page shows up only after inputting the 2fa code as well,
