@@ -81,7 +81,7 @@ was used to send requests:</div>
 
 ![](https://cdn.discordapp.com/attachments/758662311287980075/1052971135320473662/Screen_Shot_2022-12-15_at_17.31.17.png)
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_mRnNnJ/Screen Shot 2022-12-15 at 16.36.50.png)
+![](https://media.discordapp.net/attachments/758662311287980075/1052971914857033858/Screen_Shot_2022-12-15_at_17.34.23.png?width=1622&height=852)
 
 <div style="text-align: justify">&nbsp;&nbsp;&nbsp;&nbsp;Note that this successful login page shows up only after inputting the 2fa code as well,
 but without the 2fa it works the same way of course, and you only need a username and
@@ -126,15 +126,15 @@ code from the parameters:
     return result;
 
 <div style="text-align: justify">&nbsp;&nbsp;&nbsp;&nbsp;Then at the endpoint it checks if this code matches the one generated
-by the getTOTPCode method, and cheanges the state of logged in to true so
-the user can't acces any other end point without logging in and using 2 factor
+by the getTOTPCode method, and changes the state of logged in to true so
+the user can't access any other end point without logging in and using 2 factor
 authentication:</div>
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_3cE2yI/Screen Shot 2022-12-15 at 16.58.46.png)
+![](https://media.discordapp.net/attachments/758662311287980075/1052971753837699073/Screen_Shot_2022-12-15_at_17.33.43.png)
 
 If the code itself is wrong or has expired:
 
-![](../../../../../../../Desktop/Screen Shot 2022-12-15 at 16.36.40.png)
+![](https://media.discordapp.net/attachments/758662311287980075/1052972283351810148/Screen_Shot_2022-12-15_at_17.35.51.png)
 
 ### Authorization
 <div style="text-align: justify">&nbsp;&nbsp;&nbsp;&nbsp;Lastly, authorization allows different users to access different services/ciphers. The 
@@ -148,20 +148,20 @@ The method to check this is again in the database:</div>
 For example, the user "amy" is authorized to access the caesar, caesarPerm, and 
 vigenere services, and for these services they get an appropriate response:
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_TFwrpA/Screen Shot 2022-12-15 at 17.04.02.png)
-
+![](https://media.discordapp.net/attachments/758662311287980075/1052972518920683541/Screen_Shot_2022-12-15_at_17.36.46.png?width=1622&height=837)
+![](https://media.discordapp.net/attachments/758662311287980075/1052972764702707752/Screen_Shot_2022-12-15_at_17.37.45.png?width=1622&height=826)
 But if they try to acces the playfair service:
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_NMRIOA/Screen Shot 2022-12-15 at 17.04.46.png)
+![](https://media.discordapp.net/attachments/758662311287980075/1052972820570841260/Screen_Shot_2022-12-15_at_17.37.59.png?width=1622&height=827)
 
 And of course, it applies for all other users. For example user1 has access
 to only the playfair cipher, so:
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_YBI1uC/Screen Shot 2022-12-15 at 17.06.29.png)
+![](https://media.discordapp.net/attachments/758662311287980075/1052973255243354143/Screen_Shot_2022-12-15_at_17.39.40.png?width=1622&height=863)
 
 And if they try to access any other service, they get the same error message:
 
-![](../../../../../../../../../var/folders/r1/zsw4cxkj1rz62wnyb4sbrhyh0000gn/T/TemporaryItems/NSIRD_screencaptureui_2Y3HqF/Screen Shot 2022-12-15 at 17.07.06.png)
+![](https://media.discordapp.net/attachments/758662311287980075/1052973325577629767/Screen_Shot_2022-12-15_at_17.39.59.png?width=1622&height=842)
 
 ### Conclusions
 
