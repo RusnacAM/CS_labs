@@ -16,7 +16,7 @@ public class Caesar implements Cipher {
         message = message.toLowerCase();
         String encryptedMess = "";
 
-        // for the message to be encrypted, simplu the given formula has been applied
+        // for the message to be encrypted, simply the given formula has been applied
         // in order to find the new letter
         for(int i = 0; i < message.length(); i++){
             int pos = ALPHABET.indexOf(message.charAt(i));
@@ -25,7 +25,7 @@ public class Caesar implements Cipher {
 
             encryptedMess += c;
         }
-        return encryptedMess;
+        return "Initial message: " + message + "\nEncrypted message: " + encryptedMess;
     }
 
     @Override

@@ -100,7 +100,7 @@ public class Playfair implements Cipher {
             }
         }
 
-        return encryptedMess;
+        return "Initial message: " + message + "\nEncrypted message: " + encryptedMess;
     }
 
     @Override

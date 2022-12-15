@@ -1,5 +1,8 @@
+package Implementations.WebServer.Database;
+
 import java.security.MessageDigest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Database {
@@ -18,25 +21,36 @@ public class Database {
 
     public boolean checkPassword(String username, String password){
         if(!userExists(username)){
-            System.out.println("Password or Username incorrect.");
+            System.out.println("Incorrect password and/or username.");
             return false;
         }
         StringBuffer hashedPassword = new StringBuffer();
         try {
             hashedPassword = hashPassword(password);
         } catch (Exception e) {
-            System.out.println("Password or Username incorrect.");
+            System.out.println("Incorrect password and/or username..");
         }
         return userMap.get(username).password.equals(hashedPassword.toString());
     }
 
+    public boolean checkAuthorization(String username, String cipher) {
+        if(!userExists(username)){
+            System.out.println("Incorrect password and/or username.");
+            return false;
+        }
+        return userMap.get(username).authorizedCiphers.contains(cipher);
+    }
+
     // also assign new secret key every time a user is created, last step
-    public void registerUser(String username, String password) throws Exception {
+    public void registerUser(String username, String password, List<String> ciphers) throws Exception {
         if(userExists(username)) {
             throw new Exception("Account already exists.");
         }
         StringBuffer hashedPassword = hashPassword(password);
         User user = new User(username, hashedPassword.toString());
+        for (int i = 0; i < ciphers.size(); i++) {
+            user.authorizedCiphers.add(ciphers.get(i));
+        }
         userMap.put(username, user);
     }
 

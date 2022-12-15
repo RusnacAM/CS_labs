@@ -1,25 +1,24 @@
+package Implementations.WebServer.Database;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
     String username;
     String password;
-    String secretKey;
     List<String> authorizedCiphers;
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
-        this.secretKey = "";
         this.authorizedCiphers = new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Implementations.WebServer.Implementations.WebServer.Database.Database.User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", secretKey='" + secretKey + '\'' +
                 ", authorizedCiphers=" + authorizedCiphers +
                 '}';
     }

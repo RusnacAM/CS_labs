@@ -39,7 +39,7 @@ public class CaesarWithPermutation implements Cipher {
 
             encryptedMess += c;
         }
-        return encryptedMess;
+        return "Initial message: " + message + "\nEncrypted message: " + encryptedMess;
     }
 
     @Override

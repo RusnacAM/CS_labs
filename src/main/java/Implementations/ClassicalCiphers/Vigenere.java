@@ -25,7 +25,7 @@ public class Vigenere implements Cipher {
             j = ++j % key.length();
 
         }
-        return encryptedMess;
+        return "Initial message: " + message + "\nEncrypted message: " + encryptedMess;
     }
 
     @Override
